@@ -1,0 +1,109 @@
+body{
+    background-color: #000;
+}
+
+// 1 - displsay property
+/*
+* Defines the element as a grid container 
+* and establishes a new grid formatting context for its contents.
+*
+* could be : 
+* - grid (block level), 
+* - inline-grid (generates inline-level grid),
+* - subgrid if grid container is a grid item
+*
+* column, float, clear and vertical-align have no effect on a grid container
+*/
+
+// 2 - grid-template-columns
+//   - grid-template-rows
+/*
+*
+* Defines the columns and rows of the grid
+* with a space separated value
+*
+* grid-template-columns : <track-size> ... | <line-name> <track-size> ...;
+* grid-template-rows : <track-size> ... | <line-name> <track-size> ...;
+*
+* a line can have 2 name : [row1-end row2-start]
+* 
+*/
+
+.container {
+    /* 1 */ 
+    
+    display: grid;
+
+    /* 2 */
+    // colonnes : nom largeur nom largeur ...
+    grid-template-columns: [first] 40px [line2] 50px [line3] auto [col4-start] 50px [five] 40px [end];
+    // lignes
+    grid-template-rows: [row1-start] 25% [row1-end] 100px [third-line] auto [last-line];
+
+    //
+
+    //  *first*--40px--*line2*--50px--*line3*--auto--*col4-start*--50px--*five*--40px--*end*
+    //  *row1-start*
+    //  -25%-
+    //  *row1-end*
+    //  -100px-
+    //  *third-line*
+    //  -auto-
+    //  *last-line*
+
+}   
+
+// we can use repeat()
+
+.container2 {
+    grid-template-columns: repeat(3, 20px [col-start]) 5%;
+    // is equivalent to
+    //grid-template-columns: 20px [col-start] 20px [col-start] 20px [col-start] 5%;
+}
+
+// the fr unit (fr stand for « fraction »)
+
+// 3 equals fraction
+.container2b {
+    grid-template-columns: 1fr 1fr 1fr;
+    // here space available to the fr units doesn't include the 50px
+    // grid-template-columns: 1fr 50px 1fr 1fr;
+}
+
+// 3 - grid-template-areas
+/*
+*
+*  Defines a grid template by referencing the names 
+*  of the grid areas which are specified with the grid-area property. 
+* 
+*  Values :
+*
+*  <grid-area-name>  : name of a grid area specified with grid-area
+*  . : a period = an empty grid cell
+*  none : no grid area defined
+*    
+*/
+
+.item-a{
+    grid-area: header;
+}
+.item-b{
+    grid-area: main;
+}
+.item-c{
+    grid-area: sidebar;
+}
+.item-d{
+    grid-area: footer;
+}
+
+.container3 {
+
+    grid-template-columns:  repeat(4, 50px);
+    grid-template-rows: auto;
+    grid-template-areas: 
+        "header header header header"
+        "main main . sidebar"
+        "footer footer footer footer"
+
+}
