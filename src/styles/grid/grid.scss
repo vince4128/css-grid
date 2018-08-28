@@ -2,33 +2,11 @@ body{
     margin:40px;
 }
 
-.sidebar {
-    grid-area : sidebar;
-}
-
-.content {
-    grid-area : content;
-    position : relative;
-}
-
-.header {
-    grid-area : header;
-}
-
-.footer {
-    grid-area : footer;
-}
-
 .wrapper{
+    width:600px;
     display:grid; 
     grid-gap: 10px;   
-    grid-template-columns: repeat(3, 200px);
-    grid-template-areas :
-            "header header header" 
-            "sidebar content content"
-            "footer footer footer";
-    background-color: #fff;
-    color:#444;
+    grid-template-columns: repeat(6, 100px);
 }
 
 .box{
@@ -39,31 +17,7 @@ body{
     font-size: 150%;
 }
 
-.header,
-.footer {
-    background-color: #999;
-}
-
-.topleft {
-    position : absolute;
-    top : 0;
-    left : 0;
-}
-
-.topright {
-    position : absolute;
-    top : 0;
-    right : 0;
-}
-
-.bottomleft {
-    position : absolute;
-    bottom : 0;
-    left : 0;
-}
-
-.bottomright {
-    position : absolute;
-    bottom : 0;
-    right : 0;
+.box:nth-child(even) {
+    background-color: #ccc;
+    color: #000;
 }
