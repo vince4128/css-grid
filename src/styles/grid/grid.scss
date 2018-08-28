@@ -2,13 +2,6 @@ body{
     margin:40px;
 }
 
-.wrapper{
-    width:600px;
-    display:grid; 
-    grid-gap: 10px;   
-    grid-template-columns: repeat(6, 100px);
-}
-
 .box{
     background-color: #444;
     color:#fff;
@@ -20,4 +13,13 @@ body{
 .box:nth-child(even) {
     background-color: #ccc;
     color: #000;
+}
+
+.wrapper{
+    width:600px;
+    display:grid; 
+    grid-gap: 10px;   
+    grid-template-columns: repeat(6, 100px);
+    grid-template-rows: repeat(3, 100px);
+    grid-auto-flow: column;
 }
