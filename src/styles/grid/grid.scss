@@ -17,3 +17,16 @@ body{
     background-color: #fff;
     color:#444;
 }
+
+.a{
+    grid-column : auto / span 2;
+}
+
+.k{
+    grid-column : auto / span 3;
+}
+
+.g{
+    grid-column : auto / span 2;
+    grid-row : auto / span 2;
+}
